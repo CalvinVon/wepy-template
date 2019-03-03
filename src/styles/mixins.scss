@@ -1,0 +1,65 @@
+@import '../styles/variables.scss';
+
+
+// 重设宽高
+@mixin sizeReset($w, $h) {
+    width: rpx($w);
+    height: rpx($h);
+}
+
+/**
+ * Btn 样式重设
+ * @params $w 按钮的宽度
+ * @params $h 按钮的高度，同时设置行高
+ * @params $fsize 按钮的字体大小
+ * @params $color 按钮的 color 和 border-color
+ */
+@mixin btnReset($w, $h, $fsize, $color: white) {
+    width: rpx($w);
+    height: rpx($h);
+    line-height: rpx($h);
+    font-size: rpx($fsize);
+    border-color: $color;
+    color: $color;
+}
+
+
+/**
+ * Text 样式重设
+ * @params $fsize 字体大小
+ * @params $lineHight 字体的行高
+ * @params $color 字体颜色
+ */
+@mixin textReset($fsize: 17px, $lineHight: 24px, $color: black) {
+    font-size: rpx($fsize);
+    line-height: rpx($lineHight);
+    color: $color;
+}
+
+
+/**
+ * 绘制一条分割线
+ * @params $direction 分割线所在的相对位置
+ * @params $dimension 撑满宽度还是高度
+ * @params $color 分割线颜色
+ */
+@mixin divider($direction: "bottom", $dimension: "width", $color: $black-25) {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        border-#{$direction}: 1px solid $color;
+
+        #{$direction}: 0;
+        #{$dimension}: 100%;
+
+        @if $dimension=="height" {
+            top: 0;
+        }
+
+        @else {
+            left: 0;
+        }
+    }
+}

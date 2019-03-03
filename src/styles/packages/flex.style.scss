@@ -1,0 +1,64 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+
+    &-column {
+        flex-flow: column nowrap;
+    }
+
+    &-wrap {
+        flex-wrap: wrap;
+    }
+
+    // 主轴对齐方式
+    &-start {
+        justify-content: flex-start;
+    }
+
+    &-end {
+        justify-content: flex-end;
+    }
+
+    &-space-around {
+        justify-content: space-around;
+    }
+
+    &-space-between {
+        justify-content: space-between;
+    }
+
+    // 二轴对齐方式
+    &-align-start {
+        align-items: flex-start;
+    }
+
+    &-align-end {
+        align-items: flex-end;
+    }
+
+    &-none {
+        flex: none;
+    }
+
+    &-extensible {
+        flex: 1;
+    }
+}
+
+.float {
+    &-left {
+        float: left;
+    }
+
+    &-right {
+        float: right;
+    }
+
+    &-fix {
+        clear: both;
+        height: 0;
+        overflow: hidden;
+    }
+}

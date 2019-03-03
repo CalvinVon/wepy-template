@@ -1,0 +1,35 @@
+// @import '../functions.scss';
+@import '../variables.scss';
+
+.btn {
+    width: rpx(200px);
+    height: rpx(45px);
+
+    &.shadowed {
+        box-shadow: 0 rpx(2px) rpx(4px) 0 rgba(0, 0, 0, 0.5);
+    }
+
+    &.rounded {
+        border-radius: rpx(45px);
+    }
+
+    &-default {
+        border: 1px solid;
+        background: transparent;
+    }
+
+    &-text {
+        border: none;
+        background: transparent;
+    }
+
+    &-primary {
+        color: white;
+        background-color: $color-primary;
+
+        &.gradation {
+            background-color: linear-gradient(180deg, lighten($color-primary, 10%) 0%, $color-primary 100%);
+            background-color: -webkit-linear-gradient(180deg, lighten($color-primary, 10%) 0%, $color-primary 100%);
+        }
+    }
+}
